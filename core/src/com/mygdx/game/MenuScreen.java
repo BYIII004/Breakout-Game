@@ -28,7 +28,22 @@ public class MenuScreen implements Screen {
     }
 
     public void create() {
-     
+        batch = new SpriteBatch();
+        skin = new Skin(Gdx.files.internal("gui/uiskin.json"));
+        stage = new Stage();
+        TextButton playbutton = new TextButton("PLAY", skin, "default");
+        playbutton.setWidth(60f);
+        playbutton.setHeight(40f);
+        playbutton.setPosition(Gdx.graphics.getWidth() /2-30, Gdx.graphics.getHeight()/2 - 100);
+        stage.addActor(playbutton);
+        Gdx.input.setInputProcessor(stage);
+
+        TextButton exitbutton = new TextButton("EXIT", skin, "default");
+        exitbutton.setWidth(60f);
+        exitbutton.setHeight(40f);
+        exitbutton.setPosition(Gdx.graphics.getWidth() /2-30, Gdx.graphics.getHeight()/2 - 150);
+        stage.addActor(exitbutton);
+        Gdx.input.setInputProcessor(stage);
     }
 
     public void render(float arg0) {
