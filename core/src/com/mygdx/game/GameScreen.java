@@ -52,16 +52,33 @@ public class GameScreen implements Screen{
         sprite.setSize(64, 18);//set size
         sprite.setPosition(468, 50);//set position
 
-        sprite.setRegion(ball);//select board
+        sprite.setRegion(ball);//select ball
         sprite.setSize(8, 88);//set size
         sprite.setPosition(496, 66);//set position
 
-        sprite.setRegion(ball);//select board
-        sprite.setSize(32, 16);//set size
-        for (int i = 0; i < 20; i++) {
-            
+        float w = Gdx.graphics.getWidth() /20;
+        float h = w/2;
+        sprite.setRegion(blueB);//select blue brick
+        sprite.setSize(w, h);//set size
+        int num = 20;
+        for (int i = 0; i < num; i++) {
+            sprite.setPosition(num*w, Gdx.graphics.getHeight()-h);//set position
         }
-        sprite.setPosition(496, 66);//set position
+        sprite.setRegion(greenB);//select green brick
+        sprite.setSize(w, h);//set size
+        for (int i = 0; i < num; i++) {
+            sprite.setPosition(num*w, Gdx.graphics.getHeight()-h*2);//set position
+        }
+        sprite.setRegion(purpleB);//select purple brick
+        sprite.setSize(w, h);//set size
+        for (int i = 0; i < num; i++) {
+            sprite.setPosition(num*w, Gdx.graphics.getHeight()-h*3);//set position
+        }
+        sprite.setRegion(redB);//select red brick
+        sprite.setSize(w, h);//set size
+        for (int i = 0; i < num; i++) {
+            sprite.setPosition(num*w, Gdx.graphics.getHeight()-h*4);//set position
+        }
     }
 
     public void render(float arg0){
