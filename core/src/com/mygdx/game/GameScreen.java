@@ -49,10 +49,19 @@ public class GameScreen implements Screen{
         sprite = new Sprite();
 
         sprite.setRegion(board);//select board
+        sprite.setSize(64, 18);//set size
+        sprite.setPosition(468, 50);//set position
 
-        sprite.setSize(60, 60);//set size
+        sprite.setRegion(ball);//select board
+        sprite.setSize(8, 88);//set size
+        sprite.setPosition(496, 66);//set position
 
-        sprite.setPosition(50, 50);//set position
+        sprite.setRegion(ball);//select board
+        sprite.setSize(32, 16);//set size
+        for (int i = 0; i < 20; i++) {
+            
+        }
+        sprite.setPosition(496, 66);//set position
     }
 
     public void render(float arg0){
