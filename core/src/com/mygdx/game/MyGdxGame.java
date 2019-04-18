@@ -2,14 +2,19 @@ package com.mygdx.game;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 
 public class MyGdxGame extends Game implements ApplicationListener {
-	// The class with the menu
+
 	public static MenuScreen menuScreen;
-	// The class with the game
 	public static GameScreen gameScreen;
+	Music music;
 	@Override
 	public void create() {
+		music = Gdx.audio.newMusic(Gdx.files.internal("bgm.mp3"));
+		music.setLooping(true);
+		music.setVolume(1);
+		music.play();
 		Gdx.app.log("MyGdxGame: "," create");
 		menuScreen = new MenuScreen(this);
 		gameScreen = new GameScreen(this);
@@ -21,8 +26,7 @@ public class MyGdxGame extends Game implements ApplicationListener {
 	@Override
 	public void dispose() {super.dispose();}
 	@Override
-// this method calls the super class render
-// which in turn calls the render of the actual screen being used
+
 	public void render() {super.render();}
 	@Override
 	public void resize(int width, int height) { super.resize(width, height);}
