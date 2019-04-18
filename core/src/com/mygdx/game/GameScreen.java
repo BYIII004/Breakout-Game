@@ -23,7 +23,13 @@ public class GameScreen implements Screen{
     Stage stage;
     Sprite sprite;
 
-
+    Texture Bricks;
+    TextureRegion blueB;
+    TextureRegion greenB;
+    TextureRegion redB;
+    TextureRegion purpleB;
+    TextureRegion board;
+    TextureRegion ball;
 
 
     public GameScreen(MyGdxGame game){
@@ -31,8 +37,22 @@ public class GameScreen implements Screen{
     }
 
     public void create(){
+        Bricks = new Texture(Gdx.files.internal("breakout_pieces.png"));
+        blueB = new TextureRegion(Bricks, 8,8,32,16);
+        greenB = new TextureRegion(Bricks, 8,28,32,16);
+        redB = new TextureRegion(Bricks, 8,48,32,16);
+        purpleB = new TextureRegion(Bricks, 8,68,32,16);
+        board = new TextureRegion(Bricks, 48,4,64,16);
+        ball = new TextureRegion(Bricks, 48,32,8,8);
+        batch = new SpriteBatch();
 
+        sprite = new Sprite();
 
+        sprite.setRegion(board);//select board
+
+        sprite.setSize(60, 60);//set size
+
+        sprite.setPosition(50, 50);//set position
     }
 
     public void render(float arg0){
