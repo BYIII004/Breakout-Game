@@ -25,7 +25,7 @@ public class MenuScreen implements Screen {
     }
     public void create() {
         batch = new SpriteBatch();
-        texture = new Texture(Gdx.files.internal("背景图.png"));
+        texture = new Texture(Gdx.files.internal("bg.jpg.png"));
         skin = new Skin(Gdx.files.internal("gui/uiskin.json"));
         stage = new Stage();
         TextButton playbutton = new TextButton("PLAY", skin, "default");
